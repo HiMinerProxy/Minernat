@@ -1,7 +1,7 @@
 # minernat
 
-ETH矿池代理中转程序`hellominer`的客户端，用于安装在矿机本地局域网，为所有矿机提供统一入口，上级对接`hellominer`的`ws`协议端口，建立加密伪装隧道。
-采用Golang语言开发，性能稳定优异。支持安装为系统服务，开机自启动，支持进程守护运行，程序自动调整连接数限制。Telegram交流群 [点击加入](https://t.me/hellominer_group) 。
+ETH矿池代理中转程序`himinerproxy`的客户端，用于安装在矿机本地局域网，为所有矿机提供统一入口，上级对接`himinerproxy`的`ws`协议端口，建立加密伪装隧道。
+采用Golang语言开发，性能稳定优异。支持安装为系统服务，开机自启动，支持进程守护运行，程序自动调整连接数限制。Telegram交流群 [点击加入](https://t.me/+X4aM84WUSC5hYjM5) 。QQ交流群：885052325
 
 ## 系统要求
 
@@ -14,12 +14,12 @@ ETH矿池代理中转程序`hellominer`的客户端，用于安装在矿机本�
 
 ### Linux 安装
 
-1. [linux 点击下载 linux-minernat.tar.gz](https://github.com/hellominer/minernat/raw/main/releases/linux-minernat.tar.gz) 。
+1. [linux 点击下载 linux-minernat.tar.gz](https://github.com/HiMinerProxy/minernat/raw/main/releases/linux-minernat.tar.gz) 。
 2. 执行：`mkdir /etc/minernat`，创建安装目录。
 3. 把文件`linux-minernat.tar.gz`放在目录`/etc/minernat`下面。
 4. 执行：`cd /etc/minernat && tar zxfv linux-minernat.tar.gz && ./minernat install`
-5. 修改配置文件`/etc/minernat/minernat.toml` ，配置`hellominer`端口，
-假设你`hellominer`服务器IP是`122.123.0.1`,代理端口是`8888`，协议tls，那么配置文件里面的`hellominer`的值改成`tls://122.123.0.1:8888`。
+5. 修改配置文件`/etc/minernat/minernat.toml` ，配置`himinerproxy`端口，
+假设你`hellominer`服务器IP是`122.123.0.1`,代理端口是`8888`，协议tls，那么配置文件里面的`himinerproxy`的值改成`tls://122.123.0.1:8888`。
 6. 安装完毕，记得启动哟。启动命令：`systemctl start minernat`。
 7. 中转端口，默认是：`15555`，矿机连接的就是这个端口，可以通过修改`/etc/minernat/minernat.toml`里面的配置`listen`修改这个端口。
 
@@ -39,7 +39,7 @@ ETH矿池代理中转程序`hellominer`的客户端，用于安装在矿机本�
 
 ### windows 安装
 
-1. [windows 点击下载 windows-minernat.tar.gz](https://github.com/hellominer/minernat/raw/main/releases/windows-minernat.tar.gz) 。
+1. [windows 点击下载 windows-minernat.tar.gz](https://github.com/HiMinerProxy/minernat/raw/main/releases/windows-minernat.tar.gz) 。
 2. 新建：`d:\minernat`，创建安装目录。
 3. 把文件`windows-minernat.tar.gz`放在目录`d:\minernat`下面。
 4. 执行解压，得到：minernat.exe。
@@ -47,20 +47,20 @@ ETH矿池代理中转程序`hellominer`的客户端，用于安装在矿机本�
 6. `cd minernat`
 7. `.\minernat.exe init`
 8. 修改配置文件`d:\minernat\minernat.toml` ，配置`hellominer`端口，
-   假设你`hellominer`服务器IP是`122.123.0.1`,`ws`端口是`8888`，那么配置文件里面的`hellominer`的值改成`ws://122.123.0.1:8888`。
+   假设你`himinerproxy`服务器IP是`122.123.0.1`,`ws`端口是`8888`，那么配置文件里面的`hellominer`的值改成`ws://122.123.0.1:8888`。
 9. 安装完毕，双击`minernat.exe`就启动了，不要关闭窗口。
 10. 中转端口，默认是：`15555`，矿机连接的就是这个端口，可以通过修改`d:\minernat\minernat.toml`里面的配置`listen`修改这个端口。
 
 ### windows 安装为系统服务
-1. [windows 点击下载 windows-minernat.tar.gz](https://github.com/hellominer/minernat/raw/main/releases/windows-minernat.tar.gz) 。
+1. [windows 点击下载 windows-minernat.tar.gz](https://github.com/HiMinerProxy/minernat/raw/main/releases/windows-minernat.tar.gz) 。
 2. 新建：`d:\minernat`，创建安装目录。
 3. 把文件`windows-minernat.tar.gz`放在目录`d:\minernat`下面。
 4. 执行解压，得到：minernat.exe。
 5. 打开命令提示符：输入：`d:`
 6. `cd minernat`
 7. 执行`.\minernat.exe install`，就把`minernat`安装为系统服务，开机自动启动。
-8. 修改配置文件`d:\minernat\minernat.toml` ，配置`hellominer`端口，
-   假设你`hellominer`服务器IP是`122.123.0.1`,`ws`端口是`8888`，那么配置文件里面的`hellominer`的值改成`ws://122.123.0.1:8888`。 
+8. 修改配置文件`d:\minernat\minernat.toml` ，配置`himinerproxy`端口，
+   假设你`himinerproxy`服务器IP是`122.123.0.1`,`ws`端口是`8888`，那么配置文件里面的`himinerproxy`的值改成`ws://122.123.0.1:8888`。 
 9. 安装完毕，记得启动哟。启动命令：`net start minernat`。
 10. 中转端口，默认是：`15555`，矿机连接的就是这个端口，可以通过修改`d:\minernat\minernat.toml`里面的配置`listen`修改这个端口。
 
@@ -77,7 +77,9 @@ ETH矿池代理中转程序`hellominer`的客户端，用于安装在矿机本�
 
 ## 问题交流
 
-如果您遇到使用问题，欢迎加入telegram交流群 [点击加入](https://t.me/hellominer_group) 寻求帮助。
+如果您遇到使用问题，欢迎加入telegram交流群 [点击加入](https://t.me/+X4aM84WUSC5hYjM5) 寻求帮助。 QQ交流群：885052325
+
+
 
 ## 更新日志
 
@@ -87,7 +89,7 @@ ETH矿池代理中转程序`hellominer`的客户端，用于安装在矿机本�
 
 ### v2.0
 - 兼容协议也可以使用了。
-- 可以通过代理连接hellominer了。
+- 可以通过代理连接himinerproxy了。
 - 新增windows支持。
 
 ### v1.0
