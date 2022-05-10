@@ -46,8 +46,8 @@ ETH矿池代理中转程序`himinerproxy`的客户端，用于安装在矿机本
 5. 打开命令提示符：输入：`d:`
 6. `cd minernat`
 7. `.\minernat.exe init`
-8. 修改配置文件`d:\minernat\minernat.toml` ，配置`hellominer`端口，
-   假设你`himinerproxy`服务器IP是`122.123.0.1`,`ws`端口是`8888`，那么配置文件里面的`hellominer`的值改成`ws://122.123.0.1:8888`。
+8. 修改配置文件`d:\minernat\minernat.toml` ，配置`himinerproxy`端口，
+   假设你`himinerproxy`服务器IP是`122.123.0.1`,`ws`端口是`8888`，那么配置文件里面的`himinerproxy`的值改成`ws://122.123.0.1:8888`。
 9. 安装完毕，双击`minernat.exe`就启动了，不要关闭窗口。
 10. 中转端口，默认是：`15555`，矿机连接的就是这个端口，可以通过修改`d:\minernat\minernat.toml`里面的配置`listen`修改这个端口。
 
